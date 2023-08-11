@@ -19,8 +19,7 @@ jobs:
           msbuild-version: 'latest'
 
       - name: Build application
-        run: msbuild ./MyDotNet/MyDotNet.sln /p:Configuration=Release
-        working-directory: ./MyDotNet
+        run: msbuild ./github-repos/Tshepo-CI-CD-pipeline/comicwebsite/ComicWebsite.sln /p:Configuration=Release
 
   test:
     needs: build
