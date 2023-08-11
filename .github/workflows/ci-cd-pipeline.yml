@@ -15,7 +15,7 @@ jobs:
 
       - name: Build application
         run: msbuild ./Tshepo-CI-CD-pipeline/comicwebsite/ComicWebsite.sln /p:Configuration=Release
-        working-directory: ./github-repos
+        working-directory: ./Tshepo-CI-CD-pipeline
 
   test:
     needs: build
