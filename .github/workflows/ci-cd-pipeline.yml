@@ -13,13 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
-        with:
-          msbuild-version: 'latest'
-
       - name: Build application
-        run: msbuild ./github-repos/Tshepo-CI-CD-pipeline/comicwebsite/ComicWebsite.sln /p:Configuration=Release
+        run: msbuild ./Tshepo-CI-CD-pipeline/comicwebsite/ComicWebsite.sln /p:Configuration=Release
+        working-directory: ./github-repos
 
   test:
     needs: build
@@ -28,14 +24,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
-        with:
-          msbuild-version: 'latest'
-
-      - name: Build application
-        run: msbuild ./github-repos/Tshepo-CI-CD-pipeline/comicwebsite/ComicWebsite.sln /p:Configuration=Release
 
       - name: Run tests (replace with actual test commands)
         run: echo "Running tests..."
@@ -47,14 +35,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
-        with:
-          msbuild-version: 'latest'
-
-      - name: Build application
-        run: msbuild ./github-repos/Tshepo-CI-CD-pipeline/comicwebsite/ComicWebsite.sln /p:Configuration=Release
 
       - name: Deploy to staging (replace with actual deployment steps)
         run: echo "Deploying to staging..."
