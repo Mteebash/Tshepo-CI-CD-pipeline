@@ -22,7 +22,7 @@ jobs:
         run: nuget restore ./ComicWebsite/ComicWebsite.sln
 
       - name: Build application
-        run: msbuild ./ComicWebsite/ComicWebsite.csproj /p:Configuration=Release
+        run: msbuild ./ComicWebsite/ComicWebsite.sln /p:Configuration=Release
 
   test:
     needs: build
